@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Exo 2', sans-serif;
+}
+
+.flexer {
+  display: flex;
+}
+
+.w100 {
+  width: 100%;
+}
+
+#header {
+  background-color: rgba(24, 96, 169, .5);
+  height: 25vh;
+  min-height: 166px;
+  background-image: url(images/mymountains.jpeg);
+  background-size: 1500px 177px;
+  background-repeat: no-repeat;
+}
+
+#info {
+  background-color: lightblue;
+  padding: 0 20px;
+}
+
+h1 {
+  margin-top: 0%;
+  font-size: 3em;
+  padding: 20px 0 0 0;
+}
+
+#headshot {
+  padding: 1px;
+  height: 70%;
+  width: 115px;
+  margin: 10px 10px 10px 4%;
+  border: 3px solid white;
+  border-radius: 100%;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 1em;
+}
+
+a {
+  margin: 0;
+  text-decoration: none;
+}
+
+.myLink {
+  font-size: 1.75em;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 3px;
+}
+
+#first-p {
+  padding-top: 20px;
+}
+
+#info p {
+  font-size: 2em;
+  text-indent: 40px;
+  text-align: justify;
+}
+
+#footer {
+  margin: 0;
+  padding: 20px;
+  background-color: darkblue;
+  height: 15vh;
+  color: grey;
+  font-size: .6em;
+  text-align: center;
+}
+
+#message {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h5 {
+  color: white;
+  margin: 0 0 10% 0;
+  padding: 0;
+}
+
+#myName {
+  height: 12vh;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: right;
+}
+
+a.horz {
+  background-color: black;
+  color: white;
+  padding: 12px 3%;
+  border: 1px solid grey;
+}
+
+a.vert {
+  font-size: 1.5em;
+  color: blue;
+}
+
+.myLink:hover {
+  color: #6600ff;
+}
+
+#window-width {
+	position: fixed;
+	left: 300px;
+	top: 100px;
+	width: 200px;
+	background-color: black;
+	color: white;
+	font-size: 20px;
+	visibility: hidden;
+	line-height: 20px;
+	margin: 0;
+}
+
+#tester {
+	border: 1px solid red;
+	width: 30%;
+	height: 100px;
+	margin: 0 0  0 34px;
+	padding: 50px;
+}
+
+.projects {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin: 0;
+  overflow: visible;
+}
+
+.project-outer-wrapper {
+  background-color: white;
+  width: 28.3%;
+  height: 11em;
+  box-sizing: border-box;
+  margin: 2%;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 4px 4px 5px black;
+  overflow: hidden;
+}
+
+.project-wrapper {
+  overflow: hidden;
+}
+
+.project-img {
+  width: 100%;
+}
+
+.project-git-link {
+  width: 15%;
+  margin: 3px 3px;
+}
+
+.project-title {
+  width: 85%;
+}
+
+.project-git-anchor {
+    width: 45%;
+    margin: 5px;
+}
+
+.img-container {
+  display: flex;
+  width: 16%;
+  min-width: 80px;
+  overflow: hidden;
+  margin: 5px auto;
+}
+
+.icon {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.icon-anchor {
+    width: 45%;
+    margin: 5px;
+}
+
+/************ HOME ************/
+
+.about, .portfolio, .resume {
+  height: 19vh;
+  width: 24%;
+  position: absolute;
+  box-shadow: 8px 3px 5px black;
+  background-color: blue;
+}
+
+.about {
+  top: 20%;
+  left: 20%;
+}
+
+.portfolio {
+  top: 15%;
+  left: 60%;
+}
+
+.resume {
+  top: 60%;
+  left: 55%;
+}
+@media screen and (max-width: 1100px) {
+  .project-outer-wrapper {
+    width: 42%;
+    margin: 3%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .project-outer-wrapper {
+    width: 97%;
+    margin: 1%;
+
+  }
+  h2 {
+    font-size: .8em;
+  }
+  #headshot {
+    border-radius: 100%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #info p {
+    font-size: 1.5em;
+    text-indent: 40px;
+    text-align: justify;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 2.4em;
+  }
+  h5 {
+	margin-top: 20px;
+  }
+  #first-p {
+	   clear: both;
+  }
+  h2, #special-case {
+    font-size: 2.1em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    margin-top: 0%;
+    margin-left: -5px;
+    font-size: 1.8em;
+    padding: 5px 0 0 0;
+  }
+  h5 {
+    margin-left: -20px;
+	margin-top: 100px;
+	font-size: .9em;
+  }
+  #myName {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+	#myName {
+	  padding: 0;
+	  width: 100px;
+	}
+	#header {
+	  padding: 0;
+	}
+  h1 {
+    margin-top: 0%;
+    margin: 0, 0, 0, -10px;
+    font-size: 1.7em;
+    padding: 5px 0 0 0;
+  }
+  h5 {
+    margin-top: 80px;
+	margin-left: -70px;
+    font-size: .9em;
+  }
+}
