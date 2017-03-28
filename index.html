@@ -1,245 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Mike Dowd</title>
-    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="main.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-	<body>
-   <div id="header">
-     <img id="headshot" src="images/avatar.png" alt="Mike's Picture" >
-     <div id="myName">
-        <h1>Mike Dowd</h1>
-        <h5>mikedowd300@gmail.com</h5>
-     </div>
-   </div>
-   <div id="info">
+<html>
+<head>
+  <title>MasterMind</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div id="table">
+    <div class="instructions" onclick="hideInstructions()">
+      <h1 id="topLine">OBJECT</h1>
+      <P>There are 4 randomly selected colors. You must figure out the color pattern, both by color and order, with a series of guesses.</P>
+      <h1>STARTING</h1>
+      <P>Each turn consists of selecting 4 colors(pegs) from the color-bar at the bottom and placing them into holes, starting at the bottom. Then clicking the "Take That" button, when it appears, in order to have your guess "graded". If you decide you don't like your color selection before hitting "Take That", you may replace the pegs the same way you originally selected them.</P>
+      <h1>GRADING</h1>
+      <p>Grading consists of white and black mini-pegs being placed to the right of your guess. A white mini-peg indicates that you have the correct color but in the wrong hole. A black peg indicates that you have placed the correct color in the correct hole.</p>
+      <p>There is exactly one mini-peg for each correct color guessed. There is no corrolation between the order of the mini-pegs and the order of the color pegs. The same color can be selected more than once.</p>
+      <h1>STRATEGY</h1>
+      <p>Use the grades from previous guessed to narrow down, and eventually figure out, the pattern.</p>
+      <h1>GOOD LUCK!</h1>
+      <h2>CLICK ANYWHERE TO BEGIN</h2>
+    </div>
+    <div id="board">
+      <div id="winner">
+        <h1>YOU ARE A WINNER!!!!!!<h1>
+      </div>
+      <div id="answer">
+        <div id="howto">
+            <div id="howtoplay"  onclick="showInstructions()">
+              <p> How To Play </p>
+            </div>
+            <div id="skip" onclick="skipper()">
+               <p> SKIP!</p>
+            </div>
+        </div>
 
-     <div class="projects">
+      </div>
+      <div id="button" onclick="preGrader()">
+        <p>Take That!</p>
+      </div>
+      <div id="guessBoard">
+        <div class ="guess">
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="grade">
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+          </div>
+        </div>
 
-			 <div class="project-outer-wrapper">
-				 <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-							<h6 class='myLink'>Master Mind</h6>
-						 </div>
-						 <div class="project-git-link">
-							<!-- <a class="project-git-anchor" href="#"><img class="icon" src="images/githubicon3.png" alt="github"></a> -->
-						 </div>
-					 </div>
-					 <a href="../mastermind/index.html" class="project-link">
-							<img class="project-img" src="images/mastermind.png">
-					 </a>
-				 </div>
-			 </div>
+        <div class ="guess">
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="grade">
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+          </div>
+        </div>
 
-			 <div class="project-outer-wrapper">
-				 <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-							<h6 class='myLink'>Rubik's Cube<</h6>
-						 </div>
-						 <div class="project-git-link">
-							<a class="project-git-anchor" href="https://github.com/mikedowd300/rubixcube"><img class="icon" src="images/githubicon3.png" alt="github"></a>
-						 </div>
-					 </div>
-					 <a href="../rubiks/index.html" class="project-link">
-							<img class="project-img" src="images/rubiks.png">
-					 </a>
-				 </div>
-			 </div>
+        <div class ="guess">
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="grade">
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+          </div>
+        </div>
 
-			 <div class="project-outer-wrapper">
-				 <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-							<h6 class='myLink'>Pentago</h6>
-						 </div>
-						 <div class="project-git-link">
-							<!-- <a class="project-git-anchor" href="#"><img class="icon" src="images/githubicon3.png" alt="github"></a> -->
-						 </div>
-					 </div>
-					 <a href="../pentago/index.html" class="project-link">
-							<img class="project-img" src="images/pentago.png">
-					 </a>
-				 </div>
-			 </div>
+        <div class ="guess">
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="grade">
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+          </div>
+        </div>
 
-			 <div class="project-outer-wrapper">
-				 <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-							<h6 class='myLink'>Chant Maker</h6>
-						 </div>
-						 <div class="project-git-link">
-							<!-- <a class="project-git-anchor" href="#"><img class="icon" src="images/githubicon3.png" alt="github"></a> -->
-						 </div>
-					 </div>
-					 <a href="../webchant/index.html" class="project-link">
-							<img class="project-img" src="images/webchant.png">
-					 </a>
-				 </div>
-			 </div>
+        <div class ="guess">
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="grade">
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+          </div>
+        </div>
 
-			 <div class="project-outer-wrapper">
-				 <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-							<h6 class='myLink'>Abacus</h6>
-						 </div>
-						 <div class="project-git-link">
-							<a class="project-git-anchor" href="https://github.com/mikedowd300/abacus"><img class="icon" src="images/githubicon3.png" alt="github"></a>
-						 </div>
-					 </div>
-					 <a href="../abacus/index.html" class="project-link">
-							<img class="project-img" src="images/abacus.png">
-					 </a>
-				 </div>
-			 </div>
+        <div class ="guess">
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="grade">
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+          </div>
+        </div>
 
-			 <div class="project-outer-wrapper">
-	       <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-						 	<h6 class='myLink'>Typing Tutor</h6>
-						 </div>
-						 <div class="project-git-link">
-						 	<a class="project-git-anchor" href="https://github.com/mikedowd300/typingtester"><img class="icon" src="images/githubicon3.png" alt="github"></a>
-						 </div>
-					 </div>
-					 <a href="../typingtutor/index.html" class="project-link">
-           		<img class="project-img" src="images/typingtutor.png">
-					 </a>
-	       </div>
-			 </div>
+        <div class ="guess">
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="grade">
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+          </div>
+        </div>
 
-			 <div class="project-outer-wrapper">
-				 <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-							<h6 class='myLink'>Pentago Deluxe</h6>
-						 </div>
-						 <div class="project-git-link">
-							<a class="project-git-anchor" href="https://github.com/mikedowd300/pentago-delux"><img class="icon" src="images/githubicon3.png" alt="github"></a>
-						 </div>
-					 </div>
-					 <a href="../pentagodeluxe/index.html" class="project-link">
-							<img class="project-img" src="images/pentagodeluxe.png">
-					 </a>
-				 </div>
-			 </div>
+        <div class ="guess">
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="grade">
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+          </div>
+        </div>
 
-			 <div class="project-outer-wrapper">
-				 <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-							<h6 class='myLink'>Chess Timer</h6>
-						 </div>
-						 <div class="project-git-link">
-							<a class="project-git-anchor" href="https://github.com/mikedowd300/chess-timer"><img class="icon" src="images/githubicon3.png" alt="github"></a>
-						 </div>
-					 </div>
-					 <a href="../chesstimer/index.html" class="project-link">
-							<img class="project-img" src="images/chesstimer.png">
-					 </a>
-				 </div>
-			 </div>
+        <div class ="guess" id='bottom-guess'>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="peg"></div>
+          <div class="grade">
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+            <div class="pegGrade"></div>
+          </div>
+        </div>
+      <div id="colors">
+        <div id="red" class="selected">
+          <div id="redPeg" class="inner"></div>
+        </div>
+        <div id="blue" class="selected">
+          <div id="bluePeg" class="inner"></div>
+        </div>
+        <div id="green" class="selected">
+          <div id="greenPeg" class="inner"></div>
+        </div>
+        <div id="yellow" class="selected">
+          <div id="yellowPeg" class="inner"></div>
+        </div>
+        <div id="black" class="selected">
+          <div id="blackPeg" class="inner"></div>
+        </div>
+        <div id="white" class="selected">
+          <div id="whitePeg" class="inner"></div>
+        </div>
+      </div>
+      <button id="takeThat" onclick="preGrader()">Take That!</button>
+      </div>
+    </div>
+  </div>
 
-			 <div class="project-outer-wrapper">
-				 <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-							<h6 class='myLink'>Star Wars BlackJack</h6>
-						 </div>
-						 <div class="project-git-link">
-							<a class="project-git-anchor" href="https://github.com/mikedowd300/dowdQ1Project"><img class="icon" src="images/githubicon3.png" alt="github"></a>
-						 </div>
-					 </div>
-					 <a href="../starwarsblackjack/index.html" class="project-link">
-							<img class="project-img" src="images/starwarsblackjack.png">
-					 </a>
-				 </div>
-			 </div>
-
-			 <div class="project-outer-wrapper">
-				 <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-							<h6 class='myLink'>Roomify</h6>
-						 </div>
-						 <div class="project-git-link">
-							<!-- <a class="project-git-anchor" href="#"><img class="icon" src="images/githubicon3.png" alt="github"></a> -->
-						 </div>
-					 </div>
-					 <a href="https://roomify-f4882.firebaseapp.com/" class="project-link">
-							<img class="project-img" src="images/roomify.png">
-					 </a>
-				 </div>
-			 </div>
-
-			 <div class="project-outer-wrapper">
-				 <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-							<h6 class='myLink'>EarByter</h6>
-						 </div>
-						 <div class="project-git-link">
-							<a class="project-git-anchor" href="https://github.com/mikedowd300/EARBYTER"><img class="icon" src="images/githubicon3.png" alt="github"></a>
-						 </div>
-					 </div>
-					 <a href="https://earbyter-7a51b.firebaseapp.com/" class="project-link">
-							<img class="project-img" src="images/earbyter.png">
-					 </a>
-				 </div>
-			 </div>
-
-			 <div class="project-outer-wrapper">
-				 <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-							<h6 class='myLink'>Game Of Life</h6>
-						 </div>
-						 <div class="project-git-link">
-							<!-- <a class="project-git-anchor" href="#"><img class="icon" src="images/githubicon3.png" alt="github"></a> -->
-						 </div>
-					 </div>
-					 <a href="../gameoflife/index.html" class="project-link">
-							<img class="project-img" src="images/gameoflife.png">
-					 </a>
-				 </div>
-			 </div>
-
-			 <div class="project-outer-wrapper">
-				 <div class="project-wrapper">
-					 <div class="flexer w100">
-						 <div class="project-title">
-							<h6 class='myLink'>uXplore</h6>
-						 </div>
-						 <div class="project-git-link">
-							<!-- <a class="project-git-anchor" href="#"><img class="icon" src="images/githubicon3.png" alt="github"></a> -->
-						 </div>
-					 </div>
-					 <a href="https://uxplor-7ce2a.firebaseapp.com/" class="project-link">
-							<img class="project-img" src="images/uxplore.png">
-					 </a>
-				 </div>
-			 </div>
-
-     </div>
-   </div>
-   <div id="footer">
-      <p id="message">&copy; Mike Dowd 2017</p>
-			<div class="img-container">
-				<a class="icon-anchor" href="https://github.com/mikedowd300"><img class="icon" src="images/githubicon.png" alt="github"></a>
-				<a class="icon-anchor" href="https://www.linkedin.com/in/mikedowd300/"><img class="icon" src="images/linkedinicon3.png" alt="linkedin"></a>
-			</div>
-   </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="app.js"></script>
-
-	</script>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="app.js"></script>
 
 </body>
 </html>
